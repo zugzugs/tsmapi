@@ -26,14 +26,13 @@ def fetch_tsm_data():
     headers = {'Authorization': f'Bearer {access_token}'}
 
     # Fetch pricing data
-    alli_data = requests.get(alli_pricing_url, headers=headers).json()
+    #alli_data = requests.get(alli_pricing_url, headers=headers).json()
     horde_data = requests.get(horde_pricing_url, headers=headers).json()
 
     # Structure data
     timestamp = datetime.utcnow().isoformat()
     data_entry = {
         'timestamp': timestamp,
-        'alliance': alli_data,
         'horde': horde_data
     }
 
